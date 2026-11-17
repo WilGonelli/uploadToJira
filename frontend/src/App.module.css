@@ -1,0 +1,27 @@
+.appContainer {
+  min-height: 100vh;
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-sans);
+}
+
+.bodyLayout {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  max-width: 1380px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.mainContent:focus {
+  outline: none;
+}

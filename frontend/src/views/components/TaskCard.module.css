@@ -1,0 +1,287 @@
+.taskCard {
+  background-color: var(--color-bg-surface-elevated);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.taskCard:hover {
+  border-color: var(--color-border-default);
+  box-shadow: var(--shadow-md);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.badgesGroup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.numberBadge {
+  background-color: rgba(30, 58, 138, 0.6);
+  color: #60a5fa;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid #1e40af;
+}
+
+.statusBadge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+}
+
+.statusDone {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+  border-color: var(--color-success-border);
+}
+
+.statusPending {
+  background-color: var(--color-warning-bg);
+  color: var(--color-warning);
+  border-color: var(--color-warning-border);
+}
+
+.metaBadge {
+  background-color: var(--color-bg-surface-highlight);
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.actionsGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.actionButton {
+  padding: 0.375rem;
+  background-color: var(--color-bg-surface-highlight);
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.actionButton:hover {
+  color: var(--color-text-primary);
+  background-color: var(--color-border-default);
+}
+
+.saveButton {
+  background-color: var(--color-success);
+  color: #ffffff;
+}
+
+.saveButton:hover {
+  background-color: var(--color-success-hover);
+}
+
+.deleteButton:hover {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger);
+}
+
+.taskTitle {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.taskDescription {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.dodSection {
+  margin-top: 0.75rem;
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+}
+
+.dodTitle {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.375rem;
+}
+
+.dodList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dodItem {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.375rem;
+}
+
+.dodCheckIcon {
+  color: var(--color-success);
+  width: 0.875rem;
+  height: 0.875rem;
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+}
+
+.cardFooter {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+}
+
+.jiraLink {
+  color: #60a5fa;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 500;
+}
+
+.jiraLink:hover {
+  text-decoration: underline;
+}
+
+.jiraAttributesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.875rem;
+  margin-top: 0.625rem;
+  margin-bottom: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.attributeItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+}
+
+.attributeLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--color-text-dim);
+  font-weight: 500;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.attributeIcon {
+  width: 0.8125rem;
+  height: 0.8125rem;
+  color: #60a5fa;
+  flex-shrink: 0;
+}
+
+.attributeValue {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.attributeValueHighlight {
+  color: #93c5fd;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  background-color: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 0.0625rem 0.375rem;
+}
+
+.parentBadge {
+  background-color: rgba(99, 102, 241, 0.15);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  border-radius: var(--radius-sm);
+  padding: 0.0625rem 0.375rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.6875rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.formControl {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.formLabel {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.formInput {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-size: 0.75rem;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  padding: 0.375rem 0.5rem;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: var(--color-border-focus);
+}

@@ -1,0 +1,219 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.banner {
+  background-color: rgba(30, 41, 59, 0.6);
+  border: 1px solid var(--color-border-subtle);
+  padding: 1.25rem;
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.bannerTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bannerSubtitle {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 0.25rem;
+}
+
+.projectHighlight {
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.uploadJiraButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-success);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-lg);
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.uploadJiraButton:hover:not(:disabled) {
+  background-color: var(--color-success-hover);
+  transform: translateY(-1px);
+}
+
+.uploadJiraButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.alertBox {
+  background-color: var(--color-danger-bg);
+  border: 1px solid var(--color-danger-border);
+  color: #fca5a5;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+}
+
+.alertContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dismissButton {
+  background: transparent;
+  border: none;
+  color: #f87171;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.dismissButton:hover {
+  color: #ffffff;
+}
+
+.successBox {
+  background-color: var(--color-success-bg);
+  border: 1px solid var(--color-success-border);
+  color: #a7f3d0;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.promptCard {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-default);
+  padding: 1.25rem;
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.promptLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+.promptRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .promptRow {
+    flex-direction: row;
+  }
+}
+
+.promptTextarea {
+  flex: 1;
+  background-color: var(--color-bg-input);
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  padding: 0.875rem;
+  line-height: 1.6;
+}
+
+.promptTextarea:focus {
+  outline: none;
+  border-color: var(--color-border-focus);
+}
+
+.planButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 0 1.5rem;
+  border-radius: var(--radius-lg);
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  min-height: 3rem;
+  transition:
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.planButton:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+  box-shadow: var(--shadow-glow-blue);
+}
+
+.planButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tasksHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.tasksSectionTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.tasksGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .tasksGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.emptyState {
+  background-color: rgba(15, 23, 42, 0.4);
+  border: 2px dashed var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: var(--color-text-dim);
+  font-size: 0.875rem;
+}

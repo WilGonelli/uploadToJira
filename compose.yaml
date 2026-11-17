@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: jira-ai-backend
+    env_file:
+      - ./backend/.env
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - NODE_ENV=production
+      - CORS_ORIGIN=http://localhost:5173
+      - DATABASE_PATH=/app/data/jira_ai_orchestrator.sqlite
+      - WORKSPACE_ROOT_PATH=/workspace
+    volumes:
+      # Persistent SQLite database (:Z flag ensures Podman SELinux / rootless permissions)
+      - ./data:/app/data:Z
+      # Mount host filesystem into /mnt/c inside container for literal path access (read-only)
+      - ${HOST_C_MOUNT:-/mnt/c}:/mnt/c:ro
+      # Fallback workspace mount
+      - ../:/workspace:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3001/api/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: jira-ai-frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://localhost:3001
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+networks:
+  default:
+    name: jira-ai-network

@@ -1,0 +1,196 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-default);
+  width: 100%;
+  max-width: 44rem;
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.issueKeyBadge {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: #60a5fa;
+  background-color: rgba(30, 58, 138, 0.5);
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid #1e40af;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-top: 0.25rem;
+}
+
+.closeButton {
+  padding: 0.375rem;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.closeButton:hover {
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-surface-elevated);
+}
+
+.body {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.aiActionBox {
+  background-color: var(--color-bg-surface-elevated);
+  border: 1px solid var(--color-border-subtle);
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.aiActionTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.aiActionSubtitle {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.generateButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #2563eb, #6366f1);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.generateButton:hover:not(:disabled) {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+.generateButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.editorLabel {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.375rem;
+}
+
+.editorTextarea {
+  width: 100%;
+  background-color: var(--color-bg-input);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  padding: 0.875rem;
+  line-height: 1.6;
+}
+
+.editorTextarea:focus {
+  outline: none;
+  border-color: var(--color-border-focus);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.successMessage {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--color-success);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.uploadButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-success);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-lg);
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.uploadButton:hover:not(:disabled) {
+  background-color: var(--color-success-hover);
+}
+
+.uploadButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
